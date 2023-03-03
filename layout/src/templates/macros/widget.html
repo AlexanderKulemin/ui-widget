@@ -1,0 +1,60 @@
+{% macro widget( class) %}
+{% from "./icon.html" import icon %}
+
+<section class="widget__box{{' ' + class if class}}">
+	<aside class="widget widget_slide_1">
+		<header class="widget__header widget-header">
+			<div class="widget-header__slide">
+				<h3 class="widget-header__hdr">Accessibility Menu </h3>
+			</div>
+
+			<div class="widget-header__slide">
+				<button class="widget-header__back-btn js-back-step">
+					{{ icon('back', widget-header__back-icon) }}
+				</button>
+				<h3 class="widget-header__hdr">My Sites (4)</h3>
+			</div>
+
+			<div class="widget-header__slide">
+				<button class="widget-header__back-btn">
+					{{ icon('back', widget-header__back-icon) }}
+				</button>
+				<h3 class="widget-header__hdr">Statistics for July, 2019</h3>
+			</div>
+			
+			<a class="widget-header__close-btn" href="javascript:void(0)" title="Close the Widget">
+				{{ icon('close', widget-header__close-icon) }}
+			</a>
+		</header>
+		
+		<div class="widget__body">
+			{{ caller() }}
+		</div>
+
+		<footer class="widget__footer widget-footer">
+			<section class="widget-footer__section widget-footer__section_light">
+				<a href="#" class="widget-footer__logo-link" title="">
+					{{ icon('logo', 'widget-footer__logo') }}
+				</a>
+				<ul class="widget-footer__tools widget-tool">
+					<li class="widget-tool__item">
+						<a href="javascript:void(0)" class="widget-tool__link" title="">
+							{{ icon('feedback', 'widget-tool__icon')}}
+						</a>
+					</li>
+					<li class="widget-tool__item">
+						<a href="javascript:void(0)" class="widget-tool__link js-next-step" title="">
+							{{ icon('gear', 'widget-tool__icon')}}
+						</a>
+					</li>
+				</ul>
+			</section>
+			<section class="widget-footer__section widget-footer__section_dark">
+				<div class="widget-footer__copyright">Accessibility by UserWay.org</div>
+				<a href="#" class="widget-footer__donate-link" title="">DONATE</a>
+			</section>
+		</footer>
+	</aside>
+</section>
+
+{% endmacro %}

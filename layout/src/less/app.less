@@ -1,0 +1,98 @@
+﻿@font-face {
+	font-family: 'Metropolis';
+	src: url('../fonts/metropolis-regular-webfont.eot');
+	src: local('☺'),
+		url('../fonts/metropolis-regular-webfont.eot') format('embedded-opentype'),
+		url('../fonts/metropolis-regular-webfont.woff2') format('woff2'),
+		url('../fonts/metropolis-regular-webfont.woff') format('woff'),
+		url('../fonts/metropolis-regular-webfont.ttf') format('truetype'),
+		url('../fonts/metropolis-regular-webfont.svg') format('svg');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Metropolis';
+	src: url('../fonts/metropolis-medium-webfont.eot');
+	src: local('☺'),
+		url('../fonts/metropolis-medium-webfont.eot') format('embedded-opentype'),
+		url('../fonts/metropolis-medium-webfont.woff2') format('woff2'),
+		url('../fonts/metropolis-medium-webfont.woff') format('woff'),
+		url('../fonts/metropolis-medium-webfont.ttf') format('truetype'),
+		url('../fonts/metropolis-medium-webfont.svg') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Metropolis';
+	src: url('../fonts/metropolis-bold-webfont.eot');
+	src: local('☺'),
+		url('../fonts/metropolis-bold-webfont.eot') format('embedded-opentype'),
+		url('../fonts/metropolis-bold-webfont.woff2') format('woff2'),
+		url('../fonts/metropolis-bold-webfont.woff') format('woff'),
+		url('../fonts/metropolis-bold-webfont.ttf') format('truetype'),
+		url('../fonts/metropolis-bold-webfont.svg') format('svg');
+	font-weight: 600;
+	font-style: normal;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Metropolis', 'Helvetica', 'Arial', sans-serif;
+	min-width: 320px;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 18px;
+	font-weight: 400;
+	color: #000;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	position: relative;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	background-color: @main-bg;
+
+	&.modal-open {
+		overflow: hidden;
+	}
+
+	&:before { // loading splash screen
+		opacity: 0 !important;
+		transform: translateX(-200vw);
+		pointer-events: none;
+	}
+}
+
+.modal-scrollbar-measure {
+	position: absolute;
+	top: -9999px;
+	width: 50px;
+	height: 50px;
+	overflow: scroll;
+}
+
+a,
+button,
+.btn {
+	font-family: 'Metropolis', 'Helvetica', 'Arial', sans-serif;
+	outline: none !important;
+
+	&:focus {
+		outline: none !important; 
+	}
+}
+
+.container {
+	padding-left: 16px;
+	padding-right: 16px;
+	width: 100%;
+	max-width: 1414px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}

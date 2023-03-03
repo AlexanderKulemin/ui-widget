@@ -1,0 +1,124 @@
+.widget {
+	@animation-duration: .5s cubic-bezier(.62,-0.09,.3,1.1);
+
+	border-radius: 8px;
+	box-shadow: 0 21px 48px 0 rgba(14, 32, 55, 0.14);
+	background-color: #fff;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	width: 289px;
+	transition: transform @animation-duration, background-color .2s ease-in-out;
+	transform: translateX(120%) perspective(600px) rotateY(-90deg);
+	transform-origin: right center;
+
+	.widget__box_left & {
+		transform-origin: left center;
+		transform: translateX(-120%) perspective(600px) rotateY(90deg);
+	}
+
+	.widget__box_visible & {
+		transform: translateX(0) perspective(600px) rotateX(0);
+	}
+
+	&_dark {
+		background-color: #33394f;
+	}
+
+	.mobile & {
+		border-radius: 8px 0 0 0;
+	}
+
+	.mobile .widget__box_left & {
+		border-radius: 0 8px 0 0;
+	}
+
+	@media (min-width: 1600px) and (min-height: 876px) {
+		width: 330px;
+	}
+
+	@media (max-width: 1190px), (max-height: 756px) {
+		width: 240px;
+	}
+
+	&__box { // .widget__box
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		padding: 20px 38px;
+		display: flex;
+		flex-direction: row;
+		overflow: hidden;
+		pointer-events: none;
+		opacity: 0;
+		transition: opacity @animation-duration;
+
+		.mobile & {
+			padding: 0;
+			width: 100%;
+			justify-content: flex-end;
+			background-color: rgba(55, 65, 55, .3);
+		}
+
+		&_visible { // .widget__box_visible
+			pointer-events: all;
+			opacity: 1;
+		}
+
+		&_left { // .widget__box_left
+			right: auto;
+			left: 0;
+
+			.mobile & {
+				justify-content: flex-start;
+			}
+		}
+
+		
+	}
+
+	&__header { // .widget__header
+		height: 62px;
+		background-color: #006dd5;
+		flex: none;
+
+		@media (max-width: 1190px), (max-height: 756px) {
+			height: 44px;
+		}
+	}
+
+	&__body { // widget__body
+		flex-grow: 1;
+		display: flex;
+		flex-direction: row;
+	}
+
+	&__slide { // widget__slide
+		width: 100%;
+		flex: none;
+		padding: 14px 14px 0;
+		transition: transform .2s ease-in-out;
+
+		.widget_slide_2 & {
+			transform: translateX(-100%);
+		}
+
+		.widget_slide_3 & {
+			transform: translateX(-200%);
+		}
+
+		.widget_slide_4 & {
+			transform: translateX(-300%);
+		}
+
+		.widget_slide_5 & {
+			transform: translateX(-400%);
+		}
+	}
+
+	&__footer { // .widget__footer
+		flex: none;
+	}
+}

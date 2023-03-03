@@ -1,0 +1,55 @@
+{% extends "./templates/decorators/page_body.html"  %}
+
+{% from "./templates/macros/header.html" import header %}
+{% from "./templates/macros/footer.html" import footer %}
+{% from "./templates/macros/toggle.html" import toggle %}
+{% from "./templates/macros/widget.html" import widget %}
+{% from "./templates/macros/widget_content.html" import widget_content %}
+{% from "./templates/macros/statistics.html" import statistics %}
+
+{% block page_title %} Widget {% endblock %}
+{% set body_class = "" %}
+
+{% block content %}
+
+	{{ header() }}
+
+	<section class="content-box">
+		<div class="container">
+			<ul class="switch__box">
+				<li class="switch__row">
+					<p class="switch__label">Theme dark</p>
+					{{ toggle(false, 'switch js-theme-switch') }}
+				</li>
+				<li class="switch__row">
+					<p class="switch__label">Standart widget postition </p>
+					{{ toggle(true, 'switch js-rtl-switch') }}
+				</li>
+			</ul>
+			<button class="btn btn_centered js-open-widget">Open the Widget</button>
+		</div>
+	</section>
+	
+	{% call widget() %}
+		<section class="widget__slide slide">
+			<div class="slide__box" data-simplebar>
+				{% include "templates/partials/accessibility-menu.html" %}
+			</div>
+		</section>
+
+		<section class="widget__slide slide">
+			<div class="slide__box" data-simplebar>
+				{% include "templates/partials/my-sites.html" %}
+			</div>
+		</section>
+
+		<section class="widget__slide slide">
+			<div class="slide__box" data-simplebar>
+				{{ statistics(stats = stat_data) }}
+			</div>
+		</section>
+	{% endcall %}
+	
+	{{ footer() }}
+
+{% endblock %}

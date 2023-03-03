@@ -1,0 +1,84 @@
+{% from "../macros/icon.html" import icon %}
+
+<ul class="tile-menu">
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('keyboard', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Keyboard Nav</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label tile-menu__label_active">
+			{{ icon('read-page', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Read Page</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('contrast', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Contrast +</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('animation', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Stop Animations</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('bigger-text', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Bigger Text</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('legible-fonts', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Legible Fonts</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('cursor', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Big Cursor</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('tooltips', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Tooltips</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('link', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Highlight Links</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+	<li class="tile-menu__item">
+		<label class="tile-menu__label">
+			{{ icon('structure', 'tile-menu__icon') }}
+			<span class="tile-menu__text">Page Structure</span>
+			{{ icon('check', 'tile-menu__active-icon')}}
+		</label>
+	</li>
+</ul>
+
+<ul class="widget-button__box">
+	<li class="widget-button__row">
+		<button class="widget-button widget-button_half">Reset all</button>
+		<button class="widget-button widget-button_half">Move/Hide panel</button>
+	</li>
+	<li class="widget-button__row">
+		<button class="widget-button widget-button_full">White label this widget</button>
+	</li>
+</ul>

@@ -1,0 +1,9 @@
+{% macro toggle(is_active, class) %}
+
+<label class="toggle__box{{' ' + class if class}}">
+	<input type="checkbox" class="toggle__checkbox" {{'checked="checked"' if is_active === true}}>
+	<span class="toggle"></span>
+	<span class="toggle__bg"></span>
+</label>
+
+{% endmacro %}

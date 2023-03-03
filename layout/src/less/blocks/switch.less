@@ -1,0 +1,40 @@
+.switch {
+	flex: none;
+
+	&__box {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		max-width: 320px;
+		min-width: 250px;
+		margin: 0 auto;
+		padding: 20px 0;
+	}
+
+	&__row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		background-color: #fff;
+		padding: 10px 15px;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid rgba(227, 230, 233, 0.41);
+		}
+
+		&:first-child {
+			border-radius: 4px 4px 0 0;
+		}
+
+		&:last-child {
+			border-radius: 0 0 4px 4px;
+		}
+	}
+
+	&__label {
+		margin: 0;
+		font-size: 14px;
+		line-height: 1.4;
+		flex-grow: 1;
+	}
+}

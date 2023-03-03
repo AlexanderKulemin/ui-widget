@@ -1,0 +1,43 @@
+{% macro header(nav, user_info, is_logged, class) %}
+
+{% from "./icon.html" import icon %}
+
+	<header class="header{{ ' ' + class if class }}">
+		<div class="container">
+			<ul class="header__nav header-nav">
+				<li class="header-nav__item">
+					<a href="/" class="logo header-nav__logo" title="">UserWay</a>
+				</li>
+
+				<li class="header-nav__item">
+					<a href="javascript:void(0)" class="header-nav__mobile-menu-opener">
+						{{ icon('hamburger', 'header-nav__mobile-menu-icon')}}
+					</a>
+				</li>
+
+				<li class="header-nav__item header-nav__item_wide">
+					<ul class="social-links">
+						<li class="social-links__item">
+							<a href="#" class="social-links__btn" title="">
+								<span class="social-links__icon-box">{{ icon('facebook', 'social-links__icon') }}</span>
+							</a>
+						</li>
+						<li class="social-links__item">
+							<a href="#" class="social-links__btn" title="">
+								<span class="social-links__icon-box">{{ icon('twitter', 'social-links__icon') }}</span>
+							</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="header-nav__item">
+					<button class="btn btn_primary header-nav__btn hidden-sm js-open-widget">Open the Widget</button>
+					<a href="javascript:void(0)" class="header-nav__link shown-sm js-open-widget" title="">
+						{{ icon('accessibility', 'header-nav__link-icon') }}
+					</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+{% endmacro %}

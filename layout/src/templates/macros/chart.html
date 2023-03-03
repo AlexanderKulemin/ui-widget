@@ -1,0 +1,63 @@
+{% macro chart(value, class, is_animated = false, id = 0) %}
+
+{% set a1 = -90 %}
+{% set a2 = 0 %}
+{% set a3 = 0 %}
+{% set a4 = 90 %}
+
+{% set step = 90 /25 %}
+
+
+{% if value <= 25 %}
+	{% set a1 = -90 + value*step %}
+{% elif value <= 50  %}
+	{% set a1 = 0 %}
+	{% set a2 = (value - 25)*step %}
+{% elif value <= 75  %}
+	{% set a1 = 0 %}
+	{% set a2 = 90 %}
+	{% set a3 = (value - 50)*step %}
+{% elif value <= 100  %}
+	{% set a1 = 0 %}
+	{% set a2 = 90 %}
+	{% set a3 = 90 %}
+	{% set a4 = 90 + (value - 75)*step %}
+{% endif %}
+
+{% set angle = [ a1, a2, a3, a4 ] %}
+
+{% if is_animated %}
+	{% set angleAnimated = angle %}
+	{% set angle = [-90, 0, 0, 90] %}
+{% endif %}
+
+<div class="round-chart__box{{' round-chart__box_' + id if is_animated}}">
+	<span class="round-chart round-chart_top-left">
+		<i class="round-chart__progress" style="transform: rotateZ({{ angle[3] }}deg)"></i>
+	</span>
+	<span class="round-chart round-chart_top-right">
+		<i class="round-chart__progress" style="transform: rotateZ({{ angle[0]  }}deg)"></i>
+	</span>
+	<span class="round-chart round-chart_bottom-left">
+		<i class="round-chart__progress" style="transform: rotateZ({{ angle[2]  }}deg)"></i>
+	</span>
+	<span class="round-chart round-chart_bottom-right">
+		<i class="round-chart__progress" style="transform: rotateZ({{ angle[1] }}deg)"></i>
+	</span>
+</div>
+
+{% if is_animated %}
+<script>
+	{% if id==1 %}
+		var charts = [];
+	{% endif %}
+	
+	query = '.round-chart__box_{{id}}';
+	a1 = {{angleAnimated[0]}};
+	a2 = {{angleAnimated[1]}};
+	a3 = {{angleAnimated[2]}};
+	a4 = {{angleAnimated[3]}};
+	charts.push({query, a1, a2, a3, a4});
+</script>
+{% endif %}
+{% endmacro %}

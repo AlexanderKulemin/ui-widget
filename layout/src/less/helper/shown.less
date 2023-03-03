@@ -1,0 +1,47 @@
+.shown {
+	display: inline-flex;
+
+	&-xl {
+
+	}
+
+	&-lg {
+		@media (max-width: 1190px) {
+			display: inline-flex;
+		}
+
+		@media (min-width: 1191px) {
+			display: none;
+		}
+	}
+
+	&-md {
+		@media (max-width: 992px) {
+			display: inline-flex;
+		}
+
+		@media (min-width: 993px) {
+			display: none;
+		}
+	}
+
+	&-sm {
+		@media (max-width: 767px) {
+			display: inline-flex;
+		}
+
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+
+	&-xs {
+		@media (max-width: 490px) {
+			display: inline-flex;
+		}
+
+		@media (min-width: 491px) {
+			display: none;
+		}
+	}
+}

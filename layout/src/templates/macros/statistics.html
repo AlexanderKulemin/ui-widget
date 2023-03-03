@@ -1,0 +1,42 @@
+{% macro statistics(stats, class) %}
+
+{% from "./icon.html" import icon %}
+{% from "./chart.html" import chart %}
+
+<h3 class="widget-list__ttl">{{ icon('accessibility', 'widget-list__ttl-icon') }} UserWay.org</h3>
+
+<section class="widget-list__summary widget-summary">
+	<div class="widget-summary__box">
+		<label class="widget-summary__label">Widget loads</label>
+		<span class="widget-summary__value">568 832</span>
+	</div>
+
+	<div class="widget-summary__box">
+		<label class="widget-summary__label">Widget opens</label>
+		<span class="widget-summary__value">2 850 <i class="widget-summary__description">(48%)</i></span>
+	</div>
+</section>
+<ul class="widget-list">
+	<li class="widget-list__item">
+		<label for="" class="widget-list__label widget-list__label_header">
+			Accessibility features used:
+		</label>
+	</li>
+	{% for item in stats %}
+	<li class="widget-list__item">
+		<label class="widget-list__label statistic-info">
+			<span class="statistic-info__icon-box">
+				{{ icon(item.icon,'statistic-info__icon') }}
+			</span>
+			<span class="statistic-info__name">{{ item.name }}</span>
+			<span class="statistic-info__count">{{ item.count }}</span>
+			<span class="statistic-info__percent">{{ item.percent }}%</span>
+			<span class="statistic-info__chart-box">
+				{{ chart(item.percent, 'statistic-info__chart', true, loop.index) }}
+			</span>
+		</label>
+	</li>
+	{% endfor %}
+</ul>
+
+{% endmacro %}

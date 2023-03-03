@@ -1,0 +1,19 @@
+{
+    "name": "User Way Widgets",
+    "copyright": "© 2019 UserWay.org",
+    "description": "",
+    "keywords": "",
+    "social_networks": {
+        "title": "",
+        "title comment": "Maximum 70 characters",
+
+        "description" : "", 
+        "description comment": "Maximum 200 characters",
+
+        "image" : "",
+        "image comment": "Unique image representing the content of the page, 1.91:1 aspect ratio. Must be less than 1MB in size. 600x315 pixels, but 1200x630 or larger is preferred",
+
+        "url" : "",
+         "description comment": "The canonical URL for your page. This should be the undecorated URL, without session variables, user identifying parameters, or counters"
+    }
+}

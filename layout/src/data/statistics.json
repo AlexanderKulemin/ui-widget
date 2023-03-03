@@ -1,0 +1,64 @@
+{
+	"stat_data": [
+		{
+			"name": "Keyboard Nav",
+			"icon": "keyboard",
+			"count": "1 733",
+			"percent": "45"
+		},
+		{
+			"name": "Read Page",
+			"icon": "read-page",
+			"count": "1 138",
+			"percent": "25"
+		},
+		{
+			"name": "Stop Animations",
+			"icon": "animation",
+			"count": "673",
+			"percent": "18"
+		},
+		{
+			"name": "Contrast",
+			"icon": "contrast",
+			"count": "321",
+			"percent": "9"
+		},
+		{
+			"name": "Legible Fonts",
+			"icon": "legible-fonts",
+			"count": "133",
+			"percent": "8"
+		},
+		{
+			"name": "Bigger Text",
+			"icon": "bigger-text",
+			"count": "88",
+			"percent": "7"
+		},
+		{
+			"name": "Tooltips",
+			"icon": "tooltips",
+			"count": "55",
+			"percent": "5"
+		},
+		{
+			"name": "Big Cursor",
+			"icon": "cursor",
+			"count": "34",
+			"percent": "3"
+		},
+		{
+			"name": "Page Structure",
+			"icon": "structure",
+			"count": "22",
+			"percent": "1"
+		},
+		{
+			"name": "Highlight Links",
+			"icon": "link",
+			"count": "22",
+			"percent": "1"
+		}
+	]
+}
